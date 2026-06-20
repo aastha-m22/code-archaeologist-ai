@@ -1,4 +1,4 @@
-# 🔍 CodeArchaeologist AI
+# CodeArchaeologist AI
 
 > **Every codebase has a story. We dig it up — from the commit history, not the code.**
 
@@ -11,7 +11,7 @@ CodeArchaeologist AI is a software forensics and repository intelligence platfor
 
 ---
 
-## 🧠 The idea
+##  The idea
 
 Most code analysis tools look at the code as it exists *right now* — linting, complexity metrics, dependency graphs from imports. That misses something important: **how the code actually got built**, who built which parts, and which files secretly depend on each other in ways no import statement reveals.
 
@@ -24,24 +24,24 @@ This is based on a real software engineering research technique sometimes called
 
 ---
 
-## ✨ Features
+##  Features
 
 | Feature | What it does |
 |---|---|
-| 💚 **Repository Health Score** | 0–100 score combining 5 weighted signals: hotspot density, churn stability, ownership diversity, coupling health, contributor diversity |
-| 🚌 **Bus Factor Analysis** | Repo-level and per-file bus factor — how many contributors would need to leave before knowledge is critically lost |
-| 🧠 **ML Bug-Risk Prediction** | Real logistic regression, trained via gradient descent on this repo's own history — not a static heuristic dressed up as ML |
-| 📜 **Engineering Consultant narrative** | AI-generated findings citing specific files, percentages, and a prioritized action list — not generic praise |
-| 🔗 **Risk-colored coupling graph** | Interactive D3 force-directed graph — node color = ML risk tier, size = hotspot severity |
-| 🗺️ **Ownership heatmap** | Visual matrix of top contributors × top files |
-| 📈 **Activity timeline** | Commit volume over time |
-| 📊 **Tabbed dashboard** | Overview / Architecture / Risks / Trends — organized like a real SaaS analytics product |
-| ⚙️ **Configurable analysis depth** | Choose 100 / 300 / 500 / 1000 commits, with automatic GitHub API pagination |
-| 🔓 **Works without any keys** | Full analysis works with zero setup — GitHub token and Groq key are both optional |
+|  **Repository Health Score** | 0–100 score combining 5 weighted signals: hotspot density, churn stability, ownership diversity, coupling health, contributor diversity |
+|  **Bus Factor Analysis** | Repo-level and per-file bus factor — how many contributors would need to leave before knowledge is critically lost |
+|  **ML Bug-Risk Prediction** | Real logistic regression, trained via gradient descent on this repo's own history — not a static heuristic dressed up as ML |
+|  **Engineering Consultant narrative** | AI-generated findings citing specific files, percentages, and a prioritized action list — not generic praise |
+|  **Risk-colored coupling graph** | Interactive D3 force-directed graph — node color = ML risk tier, size = hotspot severity |
+|  **Ownership heatmap** | Visual matrix of top contributors × top files |
+|  **Activity timeline** | Commit volume over time |
+|  **Tabbed dashboard** | Overview / Architecture / Risks / Trends — organized like a real SaaS analytics product |
+|  **Configurable analysis depth** | Choose 100 / 300 / 500 / 1000 commits, with automatic GitHub API pagination |
+|  **Works without any keys** | Full analysis works with zero setup — GitHub token and Groq key are both optional |
 
 ---
 
-## ⚠️ Methodology — what's genuinely real vs. a stated heuristic
+##  Methodology — what's genuinely real vs. a stated heuristic
 
 This section exists because it's easy to dress up a hardcoded score as "AI" or "ML." Here's exactly what each component is:
 
@@ -58,7 +58,7 @@ The original spec for this project asked for gradient-boosted trees and time-ser
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/code-archaeologist.git
@@ -78,7 +78,7 @@ Both are entered in "advanced options" and stored only in your browser's `localS
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 code-archaeologist/
@@ -117,7 +117,7 @@ code-archaeologist/
 
 ---
 
-## 🔬 How the algorithms work
+##  How the algorithms work
 
 **Coupling**: For every commit touching 2–20 files (outside that range is excluded as noise — merges, mass reformats), every file pair is counted as a co-occurrence. Strength is normalized by each file's total change count.
 
@@ -131,7 +131,7 @@ code-archaeologist/
 
 ---
 
-## 🌐 Deploy to Vercel
+##  Deploy to Vercel
 
 ```bash
 npx vercel
@@ -140,7 +140,7 @@ npx vercel
 
 No environment variables needed — all keys are entered client-side at runtime.
 
-## 📦 Deploy to GitHub Pages
+##  Deploy to GitHub Pages
 
 ```bash
 npm install --save-dev gh-pages
@@ -150,13 +150,13 @@ npm run deploy
 
 ---
 
-## 🔐 Security note
+##  Security note
 
 GitHub and Groq API calls are made directly from the browser. Both keys live only in the user's own `localStorage` — appropriate for a personal tool, but means the keys are visible in DevTools. For a multi-user production deployment, route both APIs through a backend proxy (e.g. a Vercel Edge Function) so server-side keys are never exposed to the client.
 
 ---
 
-## 🗺️ Explicitly not implemented (and why)
+##  Explicitly not implemented (and why)
 
 Being upfront about scope, rather than faking these:
 
@@ -166,7 +166,7 @@ Being upfront about scope, rather than faking these:
 - **Web Workers for background processing** — the sequential per-commit GitHub API fetch is the actual bottleneck (network-bound, not CPU-bound), so a Web Worker wouldn't meaningfully help without also solving the fetch concurrency, which risks hitting GitHub secondary rate limits.
 - **Strict TypeScript migration** — the codebase is plain JS with JSDoc-style comments; a full migration was out of scope for this pass.
 
-## 🗺️ Future improvements
+##  Future improvements
 
 - [ ] Backend proxy for secure multi-user deployment
 - [ ] Concurrent (rate-limit-aware) commit fetching to speed up large-repo analysis
@@ -176,7 +176,7 @@ Being upfront about scope, rather than faking these:
 
 ---
 
-## 📄 License
+##  License
 
 MIT
 
