@@ -24,6 +24,8 @@ This is based on a real software engineering research technique sometimes called
 
 ---
 
+**Live Application:** https://code-archaeologist-ai.vercel.app/
+
 ##  Features
 
 | Feature | What it does |
