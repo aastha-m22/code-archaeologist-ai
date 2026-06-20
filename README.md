@@ -41,6 +41,10 @@ This is based on a real software engineering research technique sometimes called
 
 ---
 
+##  Screenshot
+
+![Code Archaeologist Dashboard](./screenshots/basic_layout.png)
+
 ##  Methodology — what's genuinely real vs. a stated heuristic
 
 This section exists because it's easy to dress up a hardcoded score as "AI" or "ML." Here's exactly what each component is:
